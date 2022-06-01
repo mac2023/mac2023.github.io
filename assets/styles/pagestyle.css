@@ -1,0 +1,112 @@
+#grid-tracks {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2em;
+    /* padding: 5em; */
+
+}
+
+.grid-tracks>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.grid-tracks>div>div>span {
+    display: block;
+    padding: .2em;
+    padding-inline: 1em;
+    margin-block: .2em;
+    background-color: hsl(var(--hueAscent), 20%, 90%);
+    max-width: min(90%, 90vw);
+}
+
+.grid-tracks>div>div>span:hover {
+    transform: perspective(100px) translateZ(10px);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
+}
+
+
+
+
+
+.grid-sponshorship {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+/* sponshorship */
+.sponsorship-card {
+    display: inline-grid;
+    min-height: max-content;
+    max-width: min(90%, 90vw);
+}
+
+.sponsorship-card h1,
+.sponsorship-card h2 {
+    margin: 0px;
+}
+
+.sponsorship-card>a {
+    /* background-color: hsl(40, 70%, 40%); */
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 15px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+    --c1: hsla(var(--h), var(--s), var(--l), .1);
+    --c2: hsla(var(--h), var(--s), var(--l), 1);
+    --c3: hsla(var(--h), var(--s), var(--l), .6);
+    --c4: hsla(var(--h), var(--s), var(--l), .05);
+    background: linear-gradient(-190deg, var(--c1) 0%, var(--c2) 10%, var(--c3) 50%, var(--c4) 100%) no-repeat scroll 0;
+
+}
+
+.sponsorship-card>a:hover {
+    filter: contrast(150%);
+    transform: perspective(500px) translateZ(10px);
+    text-shadow: 2px 2px 4px black;
+}
+
+.sponsorship-card>a>p {
+    display: flex;
+    flex-direction: column;
+    padding: .2em;
+}
+
+
+
+.platinum>a {
+    --h: 40;
+    --s: 5%;
+    --l: 95%;
+
+}
+
+.gold>a {
+    --h: 46;
+    --s: 100%;
+    --l: 43%;
+}
+
+.silver>a {
+    --h: 240;
+    --s: 6%;
+    --l: 60%;
+}
+
+.bronze>a {
+    --h: 43;
+    --s: 80%;
+    --l: 33%;
+}
+
+.datestable td {
+    padding-inline: 1em;
+    padding-block: .7em;
+}

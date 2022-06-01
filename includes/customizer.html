@@ -1,0 +1,85 @@
+<div id="customizer">
+    <!-- <div></div> -->
+    <div class="sticky">
+        <h2>Customizer</h2>
+        <div id="themeselectionfloat">
+
+            <div class="slidecontainer">
+                <p>Dark mode
+                    <span id="modeDisp"></span>
+                    <!-- <input id="mode" class="slider themeslider" type="range" min="0" max="360" step=".1" value="0"> -->
+                    <label class="toggleswitch">
+                        <input id="darkmodeswitch" type="checkbox" onclick=toggleDarkMode()>
+                        <span class="toggleswitchslider"></span>
+                    </label>
+                </p>
+                <p>Theme color
+                    <span id="hueDisp"></span>
+                    <input id="hue" class="slider themeslider" type="range" min="0" max="360" step=".1" value="0">
+                </p>
+                <p>Ascent color
+                    <span id="hueAscentDisp"></span>
+                    <input id="hueAscent" class="slider themeslider" type="range" min="0" max="360" step="1" value="40">
+                </p>
+
+
+                <p>Text zoom
+                    <span id="fontSizeDisp"></span>
+                    <input id="fontSize" class="slider themeslider" type="range" min=".6" max="2.2" step=".4" value="1">
+                </p>
+
+
+                <p>
+
+
+                    <span>Font select
+                        <select id="FontSelect" onchange="changeBodyFont()">
+                            <option value="Poppins" selected="selected">Poppins</option>
+                            <option value="Play">Play</option>
+                            <option value="Exo">Exo</option>
+                            <option value="Cutive Mono">Cutive Mono</option>
+                            <option value="Consolas">Consolas</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="helvetica">helvetica</option>
+                            <option value="Robot">Robot</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Bebas Neue">Bebas Neue</option>
+                            <option value="Dancing Script">Dancing Script</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            </option>
+                        </select>
+                    </span>
+
+                </p>
+                <div id="themeConfig">
+                    <button onclick="resetFunction()" class="button button-blank">
+                        Reload
+                    </button>
+
+                    <button onclick="saveTheme()" class="button button-blank">
+                        Save
+                    </button>
+                    <button onclick="closecustomizer()" class="button">
+                        Close
+                    </button>
+                </div>
+
+
+
+
+
+                <!-- </div> -->
+            </div>
+
+
+        </div>
+        <span class="copyrights">
+            &copy; 2022
+            <a href="http://mgeek.in" class="">mGeek.in</a>
+        </span>
+
+    </div>
+
+    <div></div>
+</div>

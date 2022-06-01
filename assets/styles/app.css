@@ -1,0 +1,242 @@
+/* APP */
+#app {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "sidebar app";
+    color: var(--color-text-light);
+    width: 100vw;
+    max-width: min(100%, 100vw);
+}
+
+#customizer {
+    /* display: inline-grid; */
+    width: 100%;
+    grid-area: sidebar;
+
+}
+
+#maincontent {
+    width: 100%;
+    max-width: min(100vw, 1fr);
+    display: inline-grid;
+    grid-area: app;
+    max-width: min(100%, 100vw);
+}
+
+.themeselectionfloat {
+    position: sticky;
+    top: 0px;
+}
+
+
+
+#appmain {
+    background: var(--appBackground)
+}
+
+#footer,
+.footer,
+.appfooter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 3em;
+    background: #181a35;
+    width: 100%;
+    z-index: 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-block: 2rem;
+    width: 100%;
+    max-width: min(100%, 100vw);
+}
+
+.footer a,
+.appfooter a,
+#footer a {
+    color: #67bada;
+}
+
+#copyright,
+.copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 20px;
+    /* rgba(65, 70, 139, 0.5); */
+    background-color: var(--colorCopyrightsBG);
+    font-family: var(--font-copyrights);
+    font-size: .8rem;
+    font-weight: 100;
+    color: white;
+    padding-top: auto;
+    width: 100%;
+    max-width: 100vw;
+
+}
+
+#copyright p,
+.copyrights p {
+    padding-left: 10px;
+    margin-left: 20px;
+    padding-right: 10px;
+    margin-right: 20px;
+
+}
+
+#copyright a,
+.copyrights a {
+    color: #67bada;
+}
+
+/* applog */
+#applog {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 100;
+    padding: 5px;
+    padding-right: 15px;
+    border-radius: 2px;
+    color: #fff;
+}
+
+#applog p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+#applog p span {
+    padding-left: 5px;
+}
+
+
+/* SECTION and CONTAINER */
+
+
+
+
+.appcontainer,
+.container {
+    width: 100%;
+    max-width: 100vw;
+    padding-inline: clamp(2rem, 12vw, 15rem);
+    /* padding-inline: 15vw; */
+    margin: 0;
+    overflow-x: auto;
+}
+
+.container-small {
+    width: 100%;
+    max-width: 100vw;
+    padding-inline: clamp(4rem, 15vw, 20rem);
+    margin: 0;
+    overflow-x: auto;
+}
+
+.container-large {
+    width: 100%;
+    max-width: 100vw;
+    padding-inline: clamp(1rem, 15vw, 5rem);
+    margin: 0;
+    overflow-x: auto;
+}
+
+section {
+    /* width: 100%;
+    min-height: 100vh; */
+    padding-block: clamp(2em, 10vh, 10em);
+    background-color: hsla(var(--hue), var(--sat), var(--light), var(--alpha));
+    color: hsla(var(--hueText), var(--satText), var(--lightText), var(--alphaText));
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    padding-block: clamp(2em, 10vh, 10em);
+    /* border-bottom: 1px solid hsla(var(--hue), 10%, 10%, .1); */
+}
+
+.section-large {
+    min-height: 100vh;
+    padding-block: clamp(2em, 10vh, 10em);
+    /* border-bottom: 1px solid hsla(var(--hue), 10%, 10%, .1); */
+}
+
+.section-small {
+    padding-block: clamp(1em, 5vh, 5rem);
+}
+
+
+.section:nth-child(odd) {}
+
+.section:nth-child(even) {
+    --light: calc(var(--light) - 10%);
+    --sat: calc(var(--sat) + 10%);
+}
+
+.section-light {
+    --light: 85%;
+    --sat: 15%;
+
+    --lightText: 5%;
+    /* background-color: hsla(var(--hue), 10%, 85%, 1);
+    color: var(--color-text-dark) */
+}
+
+.section-lighter {
+    --light: 95%;
+    --sat: 5%;
+    --lightText: 15%;
+    /* background-color: hsla(var(--hueComp), 10%, 95%, 1); */
+    /* color: var(--color-text-darker) */
+}
+
+.section-dark {
+    --light: 30%;
+    --sat: 80%;
+
+    /* background-color: hsla(var(--hue), 80%, 40%, 1);
+    color: var(--color-text-lighter) */
+}
+
+.section-darker {
+    --light: 15%;
+    --sat: 90%;
+    /* background-color: hsla(var(--hue), 70%, 15%, 1);
+    color: var(--color-text-light) */
+}
+
+.section-overlay {
+    background-color: var(--sectionGradientOverlay)
+}
+
+
+
+.hidden {
+    display: hidden;
+}
+
+
+.none {
+    display: none;
+}

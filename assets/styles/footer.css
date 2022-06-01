@@ -1,0 +1,67 @@
+#footerieeelinks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* padding: 10px; */
+    grid-gap: 10px;
+}
+
+.ieee-links {
+    display: inline-grid;
+    padding-block: 2em;
+}
+
+.mnnitfooter {
+    padding: 10px;
+    display: inline-grid;
+    grid-column: span 2;
+
+}
+
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+
+.flex-row-wrap-start {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: flex-end;
+    flex-grow: 1;
+
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-row-wrap-start>span {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.mnnitfooterlogo {
+    height: 4em;
+    padding: 0em;
+}
+
+
+.mnnitfooter span {
+    padding: 0px;
+}
+
+.mnnitAddress {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repete(auto-fit, minmax(20em, 1fr));
+    grid-gap: 1em;
+}

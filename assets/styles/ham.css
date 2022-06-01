@@ -1,0 +1,62 @@
+/* HAM MENU */
+/* .bars {
+    background-color: red;
+    height: 3px;
+    width: 3px;
+    z-index: 4;
+} */
+.toggle:not(.active)>.bars {
+    position: relative;
+    display: inline-block;
+    background-color: var(--colorAscentBright);
+    height: .15em;
+    width: 1em;
+    border-radius: 1px;
+    margin-block: .4em;
+}
+
+.toggle:not(.active)>.bars::before {
+    position: absolute;
+    display: inline-block;
+    background-color: var(--colorAscentBright);
+    height: .15em;
+    width: 1em;
+    border-radius: 1px;
+    margin-block: -.4em;
+    content: "";
+}
+
+.toggle:not(.active)>.bars::after {
+    position: absolute;
+    display: inline-block;
+    background-color: var(--colorAscentBright);
+    height: .15em;
+    width: 1em;
+    border-radius: 1px;
+    margin-block: .4em;
+    content: "";
+}
+
+.toggle.active>.bars {
+    position: relative;
+    display: inline-block;
+    background-color: var(--colorBgSecrodary);
+    height: .17em;
+    width: 1.2em;
+    border-radius: 1px;
+    margin-block: .4em;
+    transform: rotate(45deg);
+}
+
+.toggle.active>.bars::before {
+    position: absolute;
+    display: inline-block;
+    background-color: var(--colorBgSecrodary);
+    height: .17em;
+    width: 1.2em;
+    border-radius: 1px;
+    /* margin-block: -.4em; */
+    content: "";
+    transform: translateY(.4em);
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,214 @@
+/* Font Variables */
+@import url("./colorandfonts.css");
+@import url("./app.css");
+@import url("./header.css");
+@import url("./tags.css");
+@import url("./app.css");
+@import url("./customizer.css");
+@import url("./footer.css");
+@import url("./hero.css");
+@import url("./profile.css");
+@import url("./toggleswitch.css");
+@import url("./pagestyle.css");
+
+
+
+/* 
+
+/* Reset style */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+    color: inherit;
+    /* font-size: clamp(var(--fontSizeMin), 3vw, var(--fontSizeMax)); */
+    font-size: var(--fontSize);
+    /* font-weight: 900; */
+}
+
+:root {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    /* text-shadow: 0.01em 0.01em 0.02em var(--colorShadow); */
+    text-shadow: 0.01em 0.01em 0.02em var(--lightTextShadow);
+
+}
+
+
+
+
+
+.ytContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.ytVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+}
+
+
+.m1 {
+    margin: 1em;
+    margin-left: 2em;
+}
+
+.p1 {
+    padding-bottom: .5em;
+}
+
+
+
+/* template */
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#fileOpen {
+    background: radial-gradient(rgba(255, 255, 255, 0.493) 0%, rgba(53, 173, 243, 0.493) 200%);
+    padding: 50px;
+    min-width: 400px;
+    border-radius: 20px;
+    margin: 50px;
+    color: white;
+    font-size: 2rem;
+    text-align: left;
+}
+
+
+.cursor {
+    margin-left: .1em;
+}
+
+.cursor:after {
+    width: .1em;
+    height: 1.6em;
+    display: inline;
+    background-color: #fff;
+    padding: .08em;
+    text-shadow: none;
+    font-weight: 100;
+    content: '';
+    -webkit-transform: translateY(-0.3em);
+    transform: translateY(-0.3em);
+    -webkit-animation: cusrorblink 500ms infinite;
+    animation: cusrorblink 500ms infinite;
+}
+
+@-webkit-keyframes cusrorblink {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes cusrorblink {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+
+
+.copyIcon {
+    display: inline;
+    position: absolute;
+    border-radius: .5em;
+    width: 2em;
+    height: 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 0px;
+    right: 0px;
+    border: 1px solid var(--colorAscent);
+}
+
+/* SPACEGAME */
+
+.small {
+    font-size: small;
+}
+
+#gameInst {
+    opacity: .05;
+    -webkit-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+    -webkit-animation: gameblink 2s 5;
+    animation: gameblink 2s 5;
+    padding: 50px;
+}
+
+#gameInst:hover {
+    opacity: .5;
+}
+
+#gameInst #keylist {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#gameInst #keylist .gamekey {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    padding: 4wpx;
+    min-height: 40px;
+    min-width: 40px;
+    margin: 4px;
+    font-style: italic;
+    border-radius: 2px;
+    border: 1px solid #fff;
+}
+
+@-webkit-keyframes gameblink {
+    from {
+        opacity: .01;
+    }
+
+    to {
+        opacity: .1;
+    }
+}
+
+@keyframes gameblink {
+    from {
+        opacity: .01;
+    }
+
+    to {
+        opacity: .1;
+    }
+}
+
+
+/*# sourceMappingURL=sitestyle.css.map */

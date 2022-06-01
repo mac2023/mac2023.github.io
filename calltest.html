@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template Tester</title>
+    <link rel="stylesheet" href="./assets/styles/sitestyle.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            /* outline: 3px solid green; */
+            box-sizing: border-box;
+            border: 0px solid green;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+
+        #app {
+            background-color: red;
+            display: grid;
+            grid-template-areas: "sidebar app";
+
+        }
+
+        #customizer {
+            background-color: hsl(60, 100%, 24%);
+            grid-area: sidebar;
+            height: 100vh;
+            display: none;
+            /* padding: 2em; */
+        }
+
+        #maincontent {
+            background-color: hsl(240, 100%, 26%);
+            grid-area: "app";
+            min-height: 100%;
+
+            /* padding: 2em; */
+        }
+
+        .material-symbols-rounded {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="customizer">sidebar</div>
+        <div id="maincontent">
+            maincontent
+        </div>
+    </div>
+
+    <script>
+        localStorage.clear()
+        sessionStorage.clear()
+        async function getHTML(name, target = null, type = 'innerHTML', storage = sessionStorage) {
+            var response = ""
+            if (storage.getItem(name) != null) {
+                response = storage.getItem(name)
+                if (target != null) {
+                    // alert(target)
+                    // alert(response)
+                    // alert(type)
+                    if (type == "innerHTML") {
+                        document.getElementById(target).innerHTML = response
+                    }
+                    if (type == "outerHTML") {
+                        document.getElementById(target).outerHTML = response
+                    }
+                    if (type == "append") document.getElementById(target).innerHTML += response
+                }
+            }
+            if (storage.getItem(name) == null) {
+                let xhr = new XMLHttpRequest();
+                URL = `./${name}.html`
+                method = "GET"
+                xhr.open(method, URL)
+                await xhr.send()
+                xhr.onload = async function () {
+                    // alert(`${xhr.onerror}Loaded: ${xhr.status} ${xhr.response} `);
+                    if (xhr.status >= 200) {
+                        response = xhr.response
+                        // save to local stoage
+                        storage.setItem(name, response)
+                        await xhr.DONE
+                        if (target != null) {
+                            // alert(target)
+                            // alert(response)
+                            // alert(type)
+                            if (type == "innerHTML") {
+                                document.getElementById(target).innerHTML = response
+                            }
+                            if (type == "outerHTML") {
+                                document.getElementById(target).outerHTML = response
+                            }
+                            if (type == "append") document.getElementById(target).innerHTML += response
+                        }
+                    }
+                }
+
+            }
+
+
+            return response
+        }
+        async function reloadAll() {
+            var customizer = await getHTML('includes/customizer', 'customizer', "outerHTML")
+            var footer = await getHTML('includes/footer', 'footer', 'outerHTML')
+            var header = await getHTML('includes/header', 'header', 'outerHTML')
+            await getHTML('appmaindemo', 'content', 'outerHTML')
+            var hero = await getHTML('includes/hero', 'hero', 'outerHTML')
+            var map = await getHTML('includes/map', 'appmain', "append")
+            await getHTML('includes/demo', 'demo', 'outerHTML')
+            await getHTML('pages/sponshorship', 'appmain', "append")
+        }
+        // reloadAll()
+
+        getHTML('pages/sponshorship', 'app')
+
+    </script>
+    <script src="./assets/js/sitescript.js"></script>
+    <script src="./assets/js/colorconfig.js"></script>
+    <script type="text/javascript" src="https://generatorjs.mgeek.in/cdn/generator.js" async defer> </script>
+
+
+</body>
+
+</html>

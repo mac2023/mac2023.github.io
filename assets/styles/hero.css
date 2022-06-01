@@ -1,0 +1,84 @@
+.hero {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-rows: auto 1fr;
+    /* justify-content: center; */
+    min-height: 100vh;
+    --satHero: calc(var(--sat) + 10%);
+    --lightHero: calc(var(--light) - 15%);
+    background-color: hsla(var(--hue), var(--sat), var(--light), 1);
+    color: hsla(var(--hueText), var(--satText), var(--lightText), var(--alphaText));
+    /* font-size: clamp(1rem, 2vw, 1.2rem); */
+}
+
+
+/* HERO SECTION */
+#hero h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: bolder;
+    font-family: 'Exo', 'Arial Narrow', Arial, sans-serif;
+}
+
+#hero h2 {
+    font-size: clamp(1rem, 3vw, 2rem);
+}
+
+#hero p {
+    padding: 1em;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.8em;
+    font-weight: 500;
+}
+
+/* * {
+    font-size: clamp(.5rem, 5vw, 1.5rem);
+} */
+
+.mnnitbackground {
+    filter: brightness(50%);
+}
+
+.mnnitbackground>img {
+    width: 100%;
+    /* aspect-ratio: 16/5; */
+    height: 40vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.herocontent {
+    display: inline-grid;
+    position: relative;
+    z-index: 1;
+    color: var(--color-text-light);
+    padding-inline: clamp(1em, 10vw, 10em);
+    align-self: center;
+    /* padding: min(1em 10vh); */
+
+}
+
+.herocontent>h1,
+.herocontent>h2 {
+    margin-bottom: .2em;
+}
+
+.hero-submit-button {
+    border-radius: .7em;
+    font-weight: 900;
+    padding-block: .1em;
+    padding-inline: 1em;
+    /* margin-inline: 1em; */
+    background-color: hsl(var(--hue), 70%, 40%);
+    color: hsl(var(--hueComp), 70%, var(--lightText));
+    outline: 1px solid hsl(var(--hueComp), 40%, 60%);
+    white-space: nowrap;
+    box-shadow: 0px 0px 5px black;
+}
+
+.hero-submit-button:hover {
+    background-color: hsl(var(--hue), 90%, 60%);
+    box-shadow: 0px 0px 15px black;
+    color: hsl(var(--hueAscent), 70%, calc(var(--light) * .2));
+    outline: 2px solid hsl(var(--hueAscent), 40%, 60%);
+}
