@@ -13,6 +13,12 @@
     justify-content: flex-start;
 }
 
+.grid-tracks>div>h2 {
+    font-size: 1.2em;
+    min-height: 5em;
+    margin: 0px;
+}
+
 .grid-tracks>div>div>span {
     display: block;
     padding: .2em;
@@ -57,20 +63,31 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: white;
+    color: hsl(var(--hueAscent), 90%, 10%);
     text-shadow: 1px 1px 10px black;
     --c1: hsla(var(--h), var(--s), var(--l), .1);
     --c2: hsla(var(--h), var(--s), var(--l), 1);
-    --c3: hsla(var(--h), var(--s), var(--l), .6);
-    --c4: hsla(var(--h), var(--s), var(--l), .05);
-    background: linear-gradient(-190deg, var(--c1) 0%, var(--c2) 10%, var(--c3) 50%, var(--c4) 100%) no-repeat scroll 0;
+    --c3: hsla(var(--h), var(--s), var(--l), 1);
+    --c4: hsla(var(--h), var(--s), var(--l), .8);
+    --c5: hsla(var(--h), 0%, 100%, 1);
+    --c6: hsla(var(--h), var(--s), var(--l), .8);
+    --c7: hsla(var(--h), var(--s), var(--l), .5);
+    --c8: hsla(var(--h), var(--s), var(--l), .01);
+    background: linear-gradient(00deg,
+            var(--c1) 0%,
+            var(--c2) 10%,
+            var(--c3) 50%,
+            var(--c4) 90%,
+            var(--c5) 92%,
+            var(--c6) 95%,
+            var(--c7) 98%,
+            var(--c8) 100%) no-repeat scroll 0;
 
 }
 
-.sponsorship-card>a:hover {
-    filter: contrast(150%);
+.sponsorship-card *:hover {
+    filter: contrast(150%) drop-shadow(1px 1px 2px white);
     transform: perspective(500px) translateZ(10px);
-    text-shadow: 2px 2px 4px black;
 }
 
 .sponsorship-card>a>p {

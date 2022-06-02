@@ -1,8 +1,10 @@
 /* APP */
+
+
 #app {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr auto;
+    /* grid-template-columns: 1fr auto; */
     grid-template-areas: "sidebar app";
     color: var(--color-text-light);
     width: 100vw;
@@ -187,9 +189,8 @@ section {
 }
 
 
-.section:nth-child(odd) {}
 
-.section:nth-child(even) {
+.section:nth-of-type(even) {
     --light: calc(var(--light) - 10%);
     --sat: calc(var(--sat) + 10%);
 }

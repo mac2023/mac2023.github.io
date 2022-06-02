@@ -47,7 +47,6 @@ p {
 body {
     width: 100%;
     background: hsl(var(--hue), 100%, 100%);
-    overflow-x: hidden;
 
 }
 

@@ -1,3 +1,4 @@
+window.hideCustomizer = 0
 function cssVar(name, value) {
     var r = document.querySelector(':root')
     var rs = getComputedStyle(r)
@@ -68,28 +69,29 @@ function loadColorConfig(inputConfig = JSON.parse(sessionStorage.getItem("colorC
     closecustomizer()
 }
 
-
+function toggleCustomizer() {
+    if (window.hideCustomizer == 1) {
+        showCustomizer()
+    }
+    else if (window.hideCustomizer == 0) {
+        closecustomizer()
+    }
+}
 
 
 function closecustomizer() {
+    document.getElementById("customizer").style.display = "none"
     document.getElementById("app").style.gridTemplateAreas = '"app app"'
-    document.getElementById("customizer").style.display = "none";
-    // document.getElementById("customizer").style.gridArea = '"sidebarHidden"'
-    // document.getElementById("maincontent").style.gridColumn = "1 / 2"
-    // document.getElementById("showCustomizer").onclick = "showCustomizer"
+    window.hideCustomizer = 1
     saveTheme()
+
 }
 
 function showCustomizer() {
-    document.getElementById("app").style.gridTemplateAreas = '"sidebar app"'
-    // document.getElementById("customizer").style.gridArea = "sidebar"
-    // document.getElementById("maincontent").style.gridArea = "app"
     document.getElementById("customizer").style.display = "inline-grid";
-    // document.getElementById("customizer").style.gridArea = `"sidebar";
-    // "sidebar app"`
-    // // document.getElementById("showCustomizer").onclick = "closecustomizer()"
-    // document.getElementById("maincontent").style.gridArea = "app"
-
+    document.getElementById("app").style.gridTemplateAreas = '"sidebar app"'
+    // document.getElementById("customizer").classList.add("hidden");
+    window.hideCustomizer = 0
 }
 
 function saveTheme() {
