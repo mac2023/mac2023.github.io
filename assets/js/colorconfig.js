@@ -1,10 +1,10 @@
 window.hideCustomizer = 0
-async function cssVar(name, value) {
-    var r = await document.querySelector(':root')
-    var rs = await getComputedStyle(r)
+function cssVar(name, value) {
+    var r = document.querySelector(':root')
+    var rs = getComputedStyle(r)
     // console.log(value)
-    if (name[0] != '-') name = await '--' + name //allow passing with or without --
-    if (value) await r.style.setProperty(name, value)
+    if (name[0] != '-') name = '--' + name //allow passing with or without --
+    if (value) r.style.setProperty(name, value)
     return rs.getPropertyValue(name);
 }
 
