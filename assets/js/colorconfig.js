@@ -167,7 +167,7 @@ const copyright = `< div id = "copyright" >
     <a href="http://mnnit.ac.in.in">MNNIT</a>
 </span>
 <span id="copyauthor">Designed by
-    <a href="http://mgeek.in/webmaster">Dr. Prateek Raj Gautam</a>
+    <a href="http://webmaster.mgeek.in/">Dr. Prateek Raj Gautam</a>
 </span>
 </div > `
 
