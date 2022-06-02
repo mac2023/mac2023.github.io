@@ -11,16 +11,16 @@
     padding: 10px;
     z-index: 2;
     /* height: 100vh; */
-    min-width: 350px;
+    /* min-width: 350px; */
     font-size: 16px;
-    max-width: 90%;
+    max-width: min(100%, 80vw);
 }
 
 #customizer>.sticky>h2 {
     padding: 0px;
     margin: 0px;
     position: sticky;
-    bottom: 0px;
+    top: 0px;
 }
 
 #customizer>.sticky {
@@ -40,6 +40,7 @@
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: auto auto 1fr;
     overflow-y: auto;
+    padding-bottom: 50vh;
 
 }
 
@@ -110,8 +111,8 @@
 
 #themeConfig {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, auto));
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    grid-gap: 2em;
 }
 
 #themeConfig>.button {
