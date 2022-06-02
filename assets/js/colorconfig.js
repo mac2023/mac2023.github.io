@@ -22,20 +22,24 @@ function runonload() {
     for (i = 0; i < themeSliders.length; i++) {
         var slider = themeSliders[i]
         slider.addEventListener("input", (e) => {
-            cssVar(`--${e.target.id}`, e.target.value)
+            if (e.target.id == "fontSize")
+                cssVar(`--${e.target.id}`, e.target.value * 16 + "px")
+            else cssVar(`--${e.target.id}`, e.target.value)
             document.getElementById(`${e.target.id}Disp`).innerHTML = e.target.value
         })
     }
 
 
-    var elem = document.getElementById("fontSize")
-    elem.oninput = function () {
-        var currentValue = this.value
-        document.getElementById("fontSizeDisp").innerHTML = currentValue
-        cssVar("fontSize", currentValue)
-        document.body.style.fontSize = currentValue * 16 + "px"
-        // changeBodyFont()
-    }
+    // var elem = document.getElementById("fontSize")
+    // elem.oninput = function () {
+    //     var currentValue = this.value
+    //     document.getElementById("fontSizeDisp").innerHTML = currentValue
+    //     cssVar("fontSize", currentValue)
+    //     document.body.style.fontSize = currentValue * 16 + "px"
+    //     changeBodyFont()
+    // }
+
+    // changeBodyFont()
 
 
     var themeSliders = document.getElementsByClassName("themeslider")
@@ -55,18 +59,49 @@ function runonload() {
 
 }
 
-if (sessionStorage.getItem("colorConfig") == null) saveTheme()
+// if (sessionStorage.getItem("colorConfig") == null) saveTheme()
 if (sessionStorage.getItem("colorConfig") != null) {
     var savedConfig = JSON.parse(sessionStorage.getItem("colorConfig"))
     loadColorConfig(savedConfig)
 }
-function loadColorConfig(inputConfig = JSON.parse(sessionStorage.getItem("colorConfig"))) {
+
+
+function saveTheme() {
+    var selectedFont = document.getElementById("FontSelect").value
+    cssVar("--font-body", selectedFont)
+
+    var colorConfig = [
+        cssVar("--hue"),
+        cssVar("--hueAscent"),
+        cssVar("--fontSize"),
+        cssVar("--font-body")
+        // document.getElementById("FontSelect").value
+    ]
+    sessionStorage.removeItem("colorConfig")
+    sessionStorage.setItem("colorConfig", JSON.stringify(colorConfig))
+}
+
+function loadColorConfig(inputConfig) {
+    if (inputConfig == null) inputConfig = JSON.parse(sessionStorage.getItem("colorConfig"))
     cssVar("--hue", inputConfig[0])
     cssVar("--hueAscent", inputConfig[1])
     cssVar("--fontSize", inputConfig[2])
     cssVar("--font-body", inputConfig[3])
-    changeBodyFont(inputConfig[3])
+    document.getElementById("FontSelect").value = inputConfig[3]
+    changeBodyFont()
     closecustomizer()
+}
+
+
+function changeBodyFont() {
+    var fontselecteled = document.getElementById("FontSelect").value
+    cssVar("--font-body", `"${fontselecteled}"`)
+    document.body.style.fontFamily = fontselecteled
+    var all_headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
+    for (i = 0; i < all_headings.length; i++) {
+        cssVar("--font-body", `"${fontselecteled}"; `)
+        all_headings[i].style.fontFamily = fontselecteled
+    }
 }
 
 function toggleCustomizer() {
@@ -94,18 +129,6 @@ function showCustomizer() {
     window.hideCustomizer = 0
 }
 
-function saveTheme() {
-    var colorConfig = [
-        cssVar("--hue"),
-        cssVar("--hueAscent"),
-        cssVar("--fontSize"),
-
-        cssVar("--font-body")
-        // document.getElementById("FontSelect").value
-    ]
-    sessionStorage.removeItem("colorConfig")
-    sessionStorage.setItem("colorConfig", JSON.stringify(colorConfig))
-}
 
 function resetFunction() {
     cssVar("--light", cssVar("--lightDefault"))
@@ -117,14 +140,6 @@ function resetFunction() {
     loadColorConfig()
 }
 
-function changeBodyFont(fontselecteled = document.getElementById("FontSelect").value) {
-    document.body.style.fontFamily = fontselecteled
-    var all_headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
-    for (i = 0; i < all_headings.length; i++) {
-        cssVar("--font-body", `"${fontselecteled}"; `)
-        all_headings[i].style.fontFamily = fontselecteled
-    }
-}
 
 
 function darkMode() {
