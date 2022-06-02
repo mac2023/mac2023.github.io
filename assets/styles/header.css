@@ -45,25 +45,28 @@ header {
 
 }
 
-.nav-logo>a>span:nth-child(odd) {
+/* .nav-logo>a>span:nth-child(odd) {
     margin-left: 1.2em
-}
+} */
+
+
 
 .logo {
     /* padding-top: 5px; */
-    position: absolute;
+    position: relative;
     top: .5em;
     display: inline-block;
     height: 1.5em;
     width: 1.5em;
+
+    transform: scale(1) translateX(0) translateY(0);
 }
 
 .logo:hover {
-    position: absolute;
-    top: .5em;
-    height: 10em;
-    width: 10em;
-    filter: drop-shadow(3px 3px 3px black);
+    position: relative;
+    filter: drop-shadow(.2px .2px .15px black);
+    transform: scale(10) translateX(50%) translateY(50%);
+    /* transform: perspective(1000px) translate3d(0px, 0px, 600px); */
 
 }
 

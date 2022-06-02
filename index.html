@@ -134,13 +134,13 @@
                 let xhr = new XMLHttpRequest();
                 URL = `./${name}.html`
                 method = "GET"
-                xhr.open(method, URL)
+                await xhr.open(method, URL)
                 await xhr.send()
                 xhr.onload = async function () {
-                    console.log(xhr.status)
+                    console.log(name + xhr.status)
                     // alert(`${xhr.onerror}Loaded: ${xhr.status} ${xhr.response} `);
                     if (xhr.status >= 200 && xhr.status < 400) {
-                        response = xhr.response
+                        response = await xhr.response
                         // save to local stoage
                         await xhr.DONE
                         if (window.DEBUG != 1 || DEBUG != true) storage.setItem(name, response)
@@ -150,12 +150,12 @@
                             // alert(response)
                             // alert(type)
                             if (type == "innerHTML") {
-                                document.getElementById(target).innerHTML = response
+                                document.getElementById(target).innerHTML = await response
                             }
                             if (type == "outerHTML") {
-                                document.getElementById(target).outerHTML = response
+                                document.getElementById(target).outerHTML = await response
                             }
-                            if (type == "append") document.getElementById(target).innerHTML += response
+                            if (type == "append") document.getElementById(target).innerHTML += await response
                         }
                     }
                 }

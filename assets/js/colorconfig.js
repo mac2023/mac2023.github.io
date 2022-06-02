@@ -1,10 +1,10 @@
 window.hideCustomizer = 0
-function cssVar(name, value) {
-    var r = document.querySelector(':root')
-    var rs = getComputedStyle(r)
+async function cssVar(name, value) {
+    var r = await document.querySelector(':root')
+    var rs = await getComputedStyle(r)
     // console.log(value)
-    if (name[0] != '-') name = '--' + name //allow passing with or without --
-    if (value) r.style.setProperty(name, value)
+    if (name[0] != '-') name = await '--' + name //allow passing with or without --
+    if (value) await r.style.setProperty(name, value)
     return rs.getPropertyValue(name);
 }
 
@@ -30,36 +30,16 @@ function runonload() {
     }
 
 
-    // var elem = document.getElementById("fontSize")
-    // elem.oninput = function () {
-    //     var currentValue = this.value
-    //     document.getElementById("fontSizeDisp").innerHTML = currentValue
-    //     cssVar("fontSize", currentValue)
-    //     document.body.style.fontSize = currentValue * 16 + "px"
-    //     changeBodyFont()
-    // }
-
-    // changeBodyFont()
-
-
     var themeSliders = document.getElementsByClassName("themeslider")
     for (i = 0; i < themeSliders.length; i++) {
         var slider = themeSliders[i]
         document.getElementById(`${themeSliders[i].id}Disp`).value = cssVar(`--${themeSliders[i].id}`)
     }
 
-
-
-
-
     if (window.DEBUG == 1 || window.DEBUG == true) showCustomizer()
-
-
-
 
 }
 
-// if (sessionStorage.getItem("colorConfig") == null) saveTheme()
 if (sessionStorage.getItem("colorConfig") != null) {
     var savedConfig = JSON.parse(sessionStorage.getItem("colorConfig"))
     loadColorConfig(savedConfig)
@@ -81,8 +61,8 @@ function saveTheme() {
     sessionStorage.setItem("colorConfig", JSON.stringify(colorConfig))
 }
 
-function loadColorConfig(inputConfig) {
-    if (inputConfig == null) inputConfig = JSON.parse(sessionStorage.getItem("colorConfig"))
+async function loadColorConfig(inputConfig) {
+    if (inputConfig == null) inputConfig = await JSON.parse(sessionStorage.getItem("colorConfig"))
     cssVar("--hue", inputConfig[0])
     cssVar("--hueAscent", inputConfig[1])
     cssVar("--fontSize", inputConfig[2])
@@ -130,10 +110,10 @@ function showCustomizer() {
 }
 
 
-function resetFunction() {
-    cssVar("--light", cssVar("--lightDefault"))
-    cssVar("--sat", cssVar("--satDefault"))
-    cssVar("--hu", cssVar("--hueDefault"))
+async function resetFunction() {
+    await cssVar("--light", cssVar("--lightDefault"))
+    await cssVar("--sat", cssVar("--satDefault"))
+    await cssVar("--hu", cssVar("--hueDefault"))
     localStorage.clear()
     sessionStorage.clear()
     reloadAll()
@@ -142,19 +122,18 @@ function resetFunction() {
 
 
 
-function darkMode() {
-    cssVar("--light", "5%")
-    cssVar("--sat", "85%")
-    cssVar("--darkmode", "dark")
+async function darkMode() {
+    await cssVar("--light", "5%")
+    await cssVar("--sat", "85%")
+    await cssVar("--darkmode", "dark")
     localStorage.removeItem("darkmode")
     localStorage.setItem("darkmode", "true")
 }
 
-function darkModeDisable() {
-    cssVar("--light", cssVar("--lightDefault"))
-    cssVar("--sat", cssVar("--satDefault"))
-    cssVar("--darkmode", "--light")
-
+async function darkModeDisable() {
+    await cssVar("--light", cssVar("--lightDefault"))
+    await cssVar("--sat", cssVar("--satDefault"))
+    await cssVar("--darkmode", "--light")
     localStorage.removeItem("darkmode")
 }
 
@@ -177,11 +156,10 @@ if (localStorage.getItem("darkmode") === "true") {
 }
 
 
-// document.getElementById("darkmodeswitch").addEventListener("click", toggleDarkMode(e))
 
 function toggleDarkMode() {
     darkmode = document.getElementById("darkmodeswitch")
-    console.log("e.target")
+    // console.log("e.target")
     var state = darkmode.checked
     if (state == true) darkMode()
     if (state == false) darkModeDisable()
