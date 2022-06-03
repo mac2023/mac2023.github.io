@@ -19,7 +19,8 @@
     margin: 0px;
 }
 
-.grid-tracks>div>div>span {
+.grid-tracks>div>div>span,
+.hoverblock {
     display: block;
     padding: .2em;
     padding-inline: 1em;
@@ -28,7 +29,8 @@
     max-width: min(90%, 90vw);
 }
 
-.grid-tracks>div>div>span:hover {
+.grid-tracks>div>div>span:hover,
+.hoverblock:hover {
     transform: perspective(100px) translateZ(10px);
     box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
 }

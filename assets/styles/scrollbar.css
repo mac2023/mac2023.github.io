@@ -5,36 +5,39 @@
     width: minmax(300px, 30%);
     max-width: 80vw;
     height: 100vh;
-    padding: 10px;
+    padding: 5%;
     color: white;
     padding-top: 4em;
     z-index: 3;
-    background-color: rgba(0, 0, 0, .05);
-    transform: translateX(90%);
     filter: blur(4px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     overflow: auto;
+    transform: translateX(95%);
 }
 
 #scrollinspector>ul {
+    background-color: rgba(0, 0, 0, .05);
+
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     min-height: 40vh;
-    position: sticky;
-    top: 4rem;
+    max-height: min(90%, 90vh);
+    overflow-y: auto;
+    padding-block: 50%;
 }
 
 
-#scrollinspector>ul>li>a {
-    /* font-size: 1rem;
-    padding: 10px; */
-    /* background-color: rgba(0, 0, 0, .9); */
-    /* border-radius: 5px; */
-    /* max-width: 80%; */
+#scrollinspector a {
+
+    --sat: 10%;
+    --light: 80%;
+    --lightLink: 10%;
+    color: hsl(var(--hueLink), var(--satLink), var(--lightLink));
+    background-color: hsl(var(--hueComp), var(--sat), var(--light));
+    margin-block: 1em;
 }
 
 /* #scrollinspector h3 {
@@ -54,8 +57,12 @@
     background-color: rgba(0, 0, 0, .6);
     transform: translateX(0%);
     filter: blur(0px);
+
+    padding-inline: 10px;
 }
 
-.active {
-    background-color: hsla(189, 100%, 36%, 0.97);
+a+.activesection {
+    --sat: 40%;
+    --light: 60%;
+    background-color: hsl(var(--hueComp), var(--sat), var(--light));
 }

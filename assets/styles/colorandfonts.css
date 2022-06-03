@@ -28,6 +28,10 @@
     --alphaText: 1;
     --huetextdark: var(--hue);
 
+    --hueLink: var(--hueAscent);
+    --satLink: 97%;
+    --lightLink: 65%;
+
     --lightTextShadow: calc(calc(var(--lightText) - 50%) * 2);
 
 
@@ -49,8 +53,7 @@
     --color-text-darker: hsl(var(--huetextdark), 10%, 5%);
     /* Links */
     --color-link-ascent: hsl(var(--hueAscent), 100%, 50%);
-    --color-link: hsl(var(--hueAscent), 97%, 65%);
-
+    --color-link: hsl(var(--hueLink), var(--satLink), var(--lightLink));
     /* background */
     --colorBg: hsl(var(--hue), 30%, 35%);
     --colorBgPrimary: hsl(var(--hue), 50%, 50%);
