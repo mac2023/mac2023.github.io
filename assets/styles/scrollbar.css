@@ -5,26 +5,26 @@
     width: minmax(300px, 30%);
     max-width: 80vw;
     height: 100vh;
-    padding: 5%;
+
     color: white;
-    padding-top: 4em;
+    padding-top: 3em;
     z-index: 3;
     filter: blur(4px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     overflow: auto;
-    transform: translateX(95%);
+    --leftpadding: min(10vw, 150px);
+    padding: var(--leftpadding);
+    transform: translateX(calc(100% - var(--leftpadding) + 10px));
 }
 
 #scrollinspector>ul {
-    background-color: rgba(0, 0, 0, .05);
-
-
+    background-color: hsla(var(--hueComp), 10%, 10%, 0.1);
     display: flex;
     flex-direction: column;
     min-height: 40vh;
-    max-height: min(90%, 90vh);
+    max-height: min(calc(100% - 2em), calc(100vh - 2em));
     overflow-y: auto;
     padding-block: 50%;
 }
@@ -54,11 +54,13 @@
 } */
 
 #scrollinspector:hover {
-    background-color: rgba(0, 0, 0, .6);
+    --sat: 10%;
+    --light: 5%;
+    background-color: hsla(var(--hueComp), var(--sat), var(--light), .8);
     transform: translateX(0%);
     filter: blur(0px);
 
-    padding-inline: 10px;
+    padding-inline: 20px;
 }
 
 a+.activesection {

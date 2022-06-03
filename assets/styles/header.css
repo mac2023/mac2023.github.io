@@ -33,41 +33,55 @@ header {
     font-family: "Bebas Neue";
 }
 
-.nav-logo>a>img {
-    max-height: 1.3em;
+/* .nav-logo>a>img {
+    /* max-height: 1.3em; */
 }
 
-
-
-.nav-logo>a>span {
+*/ .nav-logo>a>span {
     display: inline-block;
     padding-inline: 5px;
 
 }
 
-/* .nav-logo>a>span:nth-child(odd) {
-    margin-left: 1.2em
-} */
-
 
 
 .logo {
-    /* padding-top: 5px; */
+    object-fit: cover;
+    align-self: center;
     position: relative;
-    top: .5em;
-    display: inline-block;
-    height: 1.5em;
-    width: 1.5em;
 
+    padding: .2em;
+    padding-top: 0em;
+    display: inline-block;
+    max-height: 1.4em;
     transform: scale(1) translateX(0) translateY(0);
 }
 
 .logo:hover {
-    position: relative;
+    /* position: relative; */
     filter: drop-shadow(.2px .2px .15px black);
-    transform: scale(10) translateX(50%) translateY(50%);
+    transform: scale(12) translateX(50%) translateY(50%);
     /* transform: perspective(1000px) translate3d(0px, 0px, 600px); */
+}
 
+.logo::before {
+    /* position: absolute;
+    top: 0px;
+    right: 0px;
+    content: "";
+    padding: 20px; */
+
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    width: 150%;
+    height: 150%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border: 1px solid green;
+    /* for demo purposes */
 }
 
 .menu {
