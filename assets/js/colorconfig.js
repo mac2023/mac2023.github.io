@@ -1,4 +1,5 @@
 window.hideCustomizer = 0
+window.darkmode = 0
 function cssVar(name, value) {
     var r = document.querySelector(':root')
     var rs = getComputedStyle(r)
@@ -110,10 +111,10 @@ function showCustomizer() {
 }
 
 
-async function resetFunction() {
-    await cssVar("--light", cssVar("--lightDefault"))
-    await cssVar("--sat", cssVar("--satDefault"))
-    await cssVar("--hu", cssVar("--hueDefault"))
+function resetFunction() {
+    cssVar("--light", cssVar("--lightDefault"))
+    cssVar("--sat", cssVar("--satDefault"))
+    cssVar("--hue", cssVar("--hueDefault"))
     localStorage.clear()
     sessionStorage.clear()
     reloadAll()
@@ -121,20 +122,32 @@ async function resetFunction() {
 }
 
 
+function toggleDarkMode() {
+    // darkmode = document.getElementById("darkmodeswitch")
+    // console.log("e.target")
+    // var state = darkmode.checked
 
-async function darkMode() {
-    await cssVar("--light", "5%")
-    await cssVar("--sat", "85%")
-    await cssVar("--darkmode", "dark")
-    localStorage.removeItem("darkmode")
-    localStorage.setItem("darkmode", "true")
+    console.log("toggleDM" + window.darkmode)
+    if (window.darkmode == 0) { darkMode() }
+    else if (window.darkmode == 1) { darkModeDisable() }
+
+}
+function darkMode() {
+    cssVar("--light", "5%")
+    cssVar("--sat", "85%")
+    cssVar("--darkmode", "dark")
+    // localStorage.removeItem("darkmode")
+    localStorage.setItem("darkmode", 1)
+    window.darkmode = 1
 }
 
-async function darkModeDisable() {
-    await cssVar("--light", cssVar("--lightDefault"))
-    await cssVar("--sat", cssVar("--satDefault"))
-    await cssVar("--darkmode", "--light")
-    localStorage.removeItem("darkmode")
+function darkModeDisable() {
+    cssVar("--light", cssVar("--lightDefault"))
+    cssVar("--sat", cssVar("--satDefault"))
+    cssVar("--darkmode", "light")
+    // localStorage.removeItem("darkmode")
+    localStorage.setItem("darkmode", 0)
+    window.darkmode = 0
 }
 
 
@@ -150,19 +163,13 @@ const copyright = `< div id = "copyright" >
 </span>
 </div > `
 
-if (localStorage.getItem("darkmode") === "true") {
-    document.getElementById("darkmodeswitch").checked = true
-    darkMode()
-}
+// if (localStorage.getItem("darkmode") === "true") {
+//     document.getElementById("darkmodeswitch").checked = true
+//     darkMode()
+// }
+
+// var darkmode = 0
+// window.darkmode = darkmode
 
 
-
-function toggleDarkMode() {
-    darkmode = document.getElementById("darkmodeswitch")
-    // console.log("e.target")
-    var state = darkmode.checked
-    if (state == true) darkMode()
-    if (state == false) darkModeDisable()
-
-}
 

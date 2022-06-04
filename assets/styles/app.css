@@ -191,8 +191,8 @@ section {
 
 
 .section:nth-of-type(even) {
-    --light: calc(var(--light) - 10%);
-    --sat: calc(var(--sat) + 10%);
+    --light: calc(var(--light) * .9);
+    --sat: calc(var(--sat) * 1.1);
 }
 
 .section-light {
@@ -200,6 +200,8 @@ section {
     --sat: 15%;
 
     --lightText: 5%;
+    /* background-color: hsla(var(--hue), var(--sat), var(--light), var(--alpha)); */
+    ;
     /* background-color: hsla(var(--hue), 10%, 85%, 1);
     color: var(--color-text-dark) */
 }
@@ -208,6 +210,8 @@ section {
     --light: 95%;
     --sat: 5%;
     --lightText: 15%;
+
+    /* background-color: hsla(var(--hue), var(--sat), var(--light), var(--alpha)); */
     /* background-color: hsla(var(--hueComp), 10%, 95%, 1); */
     /* color: var(--color-text-darker) */
 }

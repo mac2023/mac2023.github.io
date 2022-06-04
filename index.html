@@ -9,24 +9,16 @@
     <title>MAC2023</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/styles/sitestyle.css">
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-        .material-symbols-rounded {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 48
-        }
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <style>
         .preloader {
             display: grid;
-            /*grid-template-columns: 1fr;
-            grid-auto-rows: 1fr;
-            */
             width: 100vw;
             height: 100vh;
             position: fixed;
@@ -42,24 +34,17 @@
         .preloader:before {
             display: hidden;
             color: hsla(var(--hue), calc(var(--sat) * .9), calc(var(--light) * .1), var(--alpha));
-            content: "Loading";
+            content: "MAC2023";
             position: absolute;
-            /* grid-template-columns: 1fr;
-            grid-auto-rows: 1fr; */
             align-self: center;
             justify-self: center;
-            /* top: 0px;
-            left: 0px; */
+
             font-size: clamp(4rem, 20vw, 20rem);
-            /* z-index: 1001; */
+
         }
 
         @keyframes hidepreloader {
-            /* 0% {
-                top: 0px;
-                display: hidden;
-                opacity: 0;
-            } */
+
 
             0% {
                 top: 0px;
@@ -77,6 +62,13 @@
                 top: 0px;
                 display: grid;
                 opacity: .7;
+            }
+
+
+            99% {
+                top: 0vh;
+                display: grid;
+                opacity: 0;
             }
 
             100% {
@@ -177,12 +169,13 @@
             await getHTML('pages/tracks', 'appmain', "append")
             await getHTML('pages/callforpapers', 'appmain', "append")
             await getHTML('pages/importantdates', 'appmain', "append")
-            await getHTML('pages/registrationfee', 'appmain', "append")
+            await getHTML('pages/fee', 'appmain', "append")
             await getHTML('pages/sponshorship', 'appmain', "append")
+            await getHTML('pages/updates')
             var map = await getHTML('includes/map', 'appmain', "append")
 
 
-            await getHTML('includes/scrollbar', 'appmain', "append")
+            await getHTML('includes/scrollbar', 'app', "append")
         }
         reloadAll()
 

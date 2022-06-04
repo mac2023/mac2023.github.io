@@ -17,6 +17,7 @@
     --leftpadding: min(10vw, 150px);
     padding: var(--leftpadding);
     transform: translateX(calc(100% - var(--leftpadding) + 10px));
+    transition: all 500ms ease-out;
 }
 
 #scrollinspector>ul {
@@ -26,7 +27,8 @@
     min-height: 40vh;
     max-height: min(calc(100% - 2em), calc(100vh - 2em));
     overflow-y: auto;
-    padding-block: 50%;
+    padding-top: 10%;
+    padding-bottom: 110%;
 }
 
 
@@ -54,17 +56,55 @@
 } */
 
 #scrollinspector:hover {
+    padding-inline: 20px;
     --sat: 10%;
     --light: 5%;
     background-color: hsla(var(--hueComp), var(--sat), var(--light), .8);
     transform: translateX(0%);
     filter: blur(0px);
 
-    padding-inline: 20px;
 }
 
 a+.activesection {
     --sat: 40%;
     --light: 60%;
     background-color: hsl(var(--hueComp), var(--sat), var(--light));
+}
+
+.hoverblock {
+    display: block;
+    padding: .2em;
+    padding-inline: 1em;
+    margin-block: .1em;
+    background-color: hsl(var(--hueAscent), 20%, 90%);
+    max-width: min(90%, 90vw);
+
+}
+
+/* icons google */
+.material-symbols-rounded {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+.themeControlpannel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.themeControlpannel>span {
+    padding: 5px;
 }

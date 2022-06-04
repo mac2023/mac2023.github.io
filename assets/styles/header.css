@@ -33,11 +33,7 @@ header {
     font-family: "Bebas Neue";
 }
 
-/* .nav-logo>a>img {
-    /* max-height: 1.3em; */
-}
-
-*/ .nav-logo>a>span {
+.nav-logo>a>span {
     display: inline-block;
     padding-inline: 5px;
 

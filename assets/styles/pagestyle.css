@@ -19,8 +19,7 @@
     margin: 0px;
 }
 
-.grid-tracks>div>div>span,
-.hoverblock {
+.grid-tracks>div>div>span {
     display: block;
     padding: .2em;
     padding-inline: 1em;
@@ -66,7 +65,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: hsl(var(--hueAscent), 90%, 10%);
-    text-shadow: 1px 1px 10px black;
+    text-shadow: 1px 1px 12px black;
     --c1: hsla(var(--h), var(--s), var(--l), .1);
     --c2: hsla(var(--h), var(--s), var(--l), 1);
     --c3: hsla(var(--h), var(--s), var(--l), 1);
@@ -88,8 +87,8 @@
 }
 
 .sponsorship-card *:hover {
-    filter: contrast(150%) drop-shadow(1px 1px 2px white);
-    transform: perspective(500px) translateZ(10px);
+    filter: contrast(150%) brightness(110%) drop-shadow(1px 1px 1px white);
+    transform: perspective(200px) translateZ(10px);
 }
 
 .sponsorship-card>a>p {
