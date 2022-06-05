@@ -18,19 +18,45 @@
 
 
     --hueAscent: 37;
-    --hueComp: calc(var(--hue) + 180);
+
     --hueSecond: 30;
+
+    --satText: 5%;
+    --alphaText: 1;
+
+    --satLink: 97%;
+    --lightLink: 65%;
+
+
+
+
+
+    --font-body: 'Poppins';
+    --font-emph: "Cutive Mono";
+    --font-h1: var(--font-body), "Bebas Neue", "Arial";
+    --font-h2: var(--font-body), 'Poppins', "sans serif", "Cutive Mono", "Play", "Arial";
+    --font-h3: var(--font-body), 'Poppins', "sans serif", "Bebas Neue", "Verdana", "Arial";
+    --font-h4: var(--font-body), 'Poppins', "sans serif", "Comic Neue", "Arial";
+    --font-h5: var(--font-body), 'Poppins', "sans serif", "Dancing Script", "Verdana", "Arial";
+    --font-h6: var(--font-body), "Dancing Script", "Verdana", "Arial";
+    --font-code: "Cutive Mono", "Arial", "Consolas", "Monaco", "Liberation Mono", "Lucida Console", "monospace";
+    --font-copyrights: "Exo", "Verdana";
+    /* --fontSizeMin: 16px;
+    --fontSizeMax: 32px;
+    --fontSize: clamp(var(--fontSizeMin), 3vw, var(--fontSizeMax)); */
+    font-size: var(--fontSize);
+}
+
+* {
+
+    --hueComp: calc(var(--hue) + 180);
     --lightText: calc(calc(100% - var(--light)) - var(sat));
     --shadowText: calc(calc(var(--lightText) - 50%) * 4);
     --huetextlight: calc(var(--hue)*2);
     --hueText: var(--hueComp);
-    --satText: 5%;
-    --alphaText: 1;
     --huetextdark: var(--hue);
 
     --hueLink: var(--hueAscent);
-    --satLink: 97%;
-    --lightLink: 65%;
 
     --lightTextShadow: calc(calc(var(--lightText) - 50%) * 2);
 
@@ -65,26 +91,9 @@
 
     /* header navbar */
     --color-nav-bg: hsla(var(--hue), 30%, 10%, 1);
+    /* background-color: hsla(var(--hue), var(--sat), var(--light), var(--alpha)); */
 
-
-
-    --font-body: 'Poppins';
-    --font-emph: "Cutive Mono";
-    --font-h1: var(--font-body), "Bebas Neue", "Arial";
-    --font-h2: var(--font-body), 'Poppins', "sans serif", "Cutive Mono", "Play", "Arial";
-    --font-h3: var(--font-body), 'Poppins', "sans serif", "Bebas Neue", "Verdana", "Arial";
-    --font-h4: var(--font-body), 'Poppins', "sans serif", "Comic Neue", "Arial";
-    --font-h5: var(--font-body), 'Poppins', "sans serif", "Dancing Script", "Verdana", "Arial";
-    --font-h6: var(--font-body), "Dancing Script", "Verdana", "Arial";
-    --font-code: "Cutive Mono", "Arial", "Consolas", "Monaco", "Liberation Mono", "Lucida Console", "monospace";
-    --font-copyrights: "Exo", "Verdana";
-    /* --fontSizeMin: 16px;
-    --fontSizeMax: 32px;
-    --fontSize: clamp(var(--fontSizeMin), 3vw, var(--fontSizeMax)); */
-    font-size: var(--fontSize);
 }
-
-
 
 
 ::selection {
