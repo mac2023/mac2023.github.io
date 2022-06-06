@@ -163,9 +163,9 @@
             var footer = await getHTML('includes/footer', 'footer', 'outerHTML')
             var header = await getHTML('includes/header', 'header', 'outerHTML')
             await getHTML('appmaindemo', 'content', 'outerHTML')
-            await getHTML('includes/hero', 'appmain', 'append')
+            await getHTML('pages/hero', 'appmain', 'append')
 
-            await getHTML('includes/demo', 'appmain', 'append')
+            await getHTML('pages/committee', 'appmain', 'append')
             await getHTML('pages/tracks', 'appmain', "append")
             await getHTML('pages/callforpapers', 'appmain', "append")
             await getHTML('pages/importantdates', 'appmain', "append")
@@ -178,7 +178,21 @@
             await getHTML('includes/scrollbar', 'app', "append")
         }
         reloadAll()
-
+        async function reAppend() {
+            console.log("reAppended")
+            appmain.innerHTML = ""
+            await getHTML('pages/hero', 'appmain', 'append')
+            await getHTML('pages/committee', 'appmain', 'append')
+            await getHTML('pages/tracks', 'appmain', "append")
+            await getHTML('pages/callforpapers', 'appmain', "append")
+            await getHTML('pages/importantdates', 'appmain', "append")
+            await getHTML('pages/fee', 'appmain', "append")
+            await getHTML('pages/sponshorship', 'appmain', "append")
+            await getHTML('pages/updates')
+            await getHTML('pages/map', 'appmain', "append")
+            // await getHTML('includes/scrollbar', 'app', "append")
+        }
+        setTimeout(reAppend, 2000)
     </script>
     <script src="./assets/js/sitescript.js"></script>
     <script src="./assets/js/colorconfig.js"></script>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:ital,wght@0,700;1,400&family=Cutive+Mono&family=Dancing+Script&family=Exo:wght@100&family=Hind:wght@300&family=Poppins:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:ital,wght@0,700;1,400&family=Cutive+Mono&family=Dancing+Script&family=Exo:wght@100&family=Hind:wght@300&family=Poppins:wght@200&family=Roboto:wght@100&family=Source+Sans+Pro:wght@200&display=swap'); */
 
 /* COLORS */
 :root {
@@ -7,13 +7,13 @@
     testcolor: hsl(0, 100%, 57%);
     --darkmode: light dark;
     color-scheme: var(--darkmode);
-    --hueDefault: 0;
+    --hueDefault: 62.1;
     --satDefault: 50%;
     --lightDefault: 50%;
 
-    --hue: 0;
-    --sat: 50%;
-    --light: 50%;
+    --hue: var(--hueDefault);
+    --sat: var(--satDefault);
+    --light: var(--lightDefault);
     --alpha: 1;
 
 

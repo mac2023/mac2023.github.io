@@ -11,7 +11,7 @@
 @import url("./toggleswitch.css");
 @import url("./pagestyle.css");
 @import url("./scrollbar.css");
-
+@import url("./externalresources.css");
 
 
 /* 
@@ -30,7 +30,10 @@
     /* font-size: clamp(var(--fontSizeMin), 3vw, var(--fontSizeMax)); */
     font-size: var(--fontSize);
     /* font-weight: 900; */
+    writing-mode: horizontal-tb;
+
 }
+
 
 :root {
     font-size: 1rem;

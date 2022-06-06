@@ -5,7 +5,7 @@
     position: relative;
     display: grid;
     /* grid-template-columns: 1fr auto; */
-    grid-template-areas: "sidebar app";
+    grid-template-areas: "app app";
     color: var(--color-text-light);
     width: 100vw;
     max-width: min(100%, 100vw);
@@ -23,6 +23,7 @@
     max-width: min(100vw, 1fr);
     display: inline-grid;
     grid-area: app;
+    grid-column: auto/-1;
     max-width: min(100%, 100vw);
 }
 
@@ -244,4 +245,9 @@ section {
 
 .none {
     display: none;
+}
+
+.allow-word-break {
+    word-wrap: break-word;
+    word-break: break-all;
 }
