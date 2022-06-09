@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: auto;
-    --leftpadding: min(8vw, 150px);
+    /* overflow: auto; */
+    --leftpadding: min(8vw, 15em);
     padding: var(--leftpadding);
     transform: translateX(calc(100% - var(--leftpadding) + 10px));
     transition: all 200ms ease-out;
@@ -27,8 +27,9 @@
     min-height: 40vh;
     max-height: min(calc(100% - 2em), calc(100vh - 2em));
     overflow-y: auto;
-    /* padding-top: 1em; */
+    padding-top: 1em;
     padding-bottom: 110%;
+    z-index: 4;
 }
 
 
@@ -40,6 +41,7 @@
     color: hsl(var(--hueLink), var(--satLink), var(--lightLink));
     background-color: hsl(var(--hueComp), var(--sat), var(--light));
     margin-block: 1em;
+
 }
 
 /* #scrollinspector h3 {
@@ -78,7 +80,17 @@ a+.activesection {
     margin-block: .1em;
     background-color: hsl(var(--hueAscent), 20%, 90%);
     max-width: min(90%, 90vw);
+    text-transform: uppercase;
+    /* text-transform: lowercase; */
+    /* text-transform: capitalize; */
 
+}
+
+
+#sidenav li>a {
+    max-width: 18em;
+    padding-inline: .5em;
+    margin-inline: 1em;
 }
 
 /* icons google */

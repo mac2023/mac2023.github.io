@@ -9,6 +9,7 @@
     color: var(--color-text-light);
     width: 100vw;
     max-width: min(100%, 100vw);
+    background-color: #222;
 }
 
 #customizer {
@@ -20,11 +21,11 @@
 
 #maincontent {
     width: 100%;
-    max-width: min(100vw, 1fr);
+    /* max-width: min(100vw, 1fr); */
     display: inline-grid;
     grid-area: app;
-    grid-column: auto/-1;
-    max-width: min(100%, 100vw);
+    /* grid-column: auto/-1; */
+    max-width: 100vw;
 }
 
 .themeselectionfloat {
@@ -165,8 +166,7 @@
 }
 
 section {
-    /* width: 100%;
-    min-height: 100vh; */
+
     padding-block: clamp(2em, 10vh, 10em);
     background-color: hsla(var(--hue), var(--sat), var(--light), var(--alpha));
     color: hsla(var(--hueText), var(--satText), var(--lightText), var(--alphaText));

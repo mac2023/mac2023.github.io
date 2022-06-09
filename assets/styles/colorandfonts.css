@@ -7,7 +7,7 @@
     testcolor: hsl(0, 100%, 57%);
     --darkmode: light dark;
     color-scheme: var(--darkmode);
-    --hueDefault: 62.1;
+    --hueDefault: 10;
     --satDefault: 50%;
     --lightDefault: 50%;
 
@@ -17,7 +17,7 @@
     --alpha: 1;
 
 
-    --hueAscent: 37;
+    --hueAscent: 50;
 
     --hueSecond: 30;
 
@@ -31,7 +31,7 @@
 
 
 
-    --font-body: 'Poppins';
+    --font-body: Poppins;
     --font-emph: "Cutive Mono";
     --font-h1: var(--font-body), "Bebas Neue", "Arial";
     --font-h2: var(--font-body), 'Poppins', "sans serif", "Cutive Mono", "Play", "Arial";
@@ -44,6 +44,7 @@
     /* --fontSizeMin: 16px;
     --fontSizeMax: 32px;
     --fontSize: clamp(var(--fontSizeMin), 3vw, var(--fontSizeMax)); */
+    --fontSize: 1;
     font-size: var(--fontSize);
 }
 
@@ -95,6 +96,9 @@
 
 }
 
+body {
+    background-color: #333;
+}
 
 ::selection {
     /* color: hsl(var(--hueAscent), 100%, 80%); */

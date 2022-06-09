@@ -1,4 +1,5 @@
-window.hideCustomizer = 0
+document.getElementById("app").style.gridTemplateAreas = '"app app"'
+window.hideCustomizer = 1
 window.darkmode = 0
 function cssVar(name, value) {
     var r = document.querySelector(':root')
@@ -41,6 +42,9 @@ function runonload() {
 
 }
 
+if (sessionStorage.getItem("colorConfig") == null) {
+    showCustomizer()
+}
 if (sessionStorage.getItem("colorConfig") != null) {
     var savedConfig = JSON.parse(sessionStorage.getItem("colorConfig"))
     loadColorConfig(savedConfig)
@@ -70,7 +74,7 @@ async function loadColorConfig(inputConfig) {
     cssVar("--font-body", inputConfig[3])
     document.getElementById("FontSelect").value = inputConfig[3]
     changeBodyFont()
-    closecustomizer()
+    // closecustomizer()
 }
 
 
@@ -99,15 +103,24 @@ function closecustomizer() {
     document.getElementById("customizer").style.display = "none"
     document.getElementById("app").style.gridTemplateAreas = '"app app"'
     window.hideCustomizer = 1
-    saveTheme()
+    // saveTheme()
 
 }
 
 function showCustomizer() {
     document.getElementById("customizer").style.display = "inline-grid";
     document.getElementById("app").style.gridTemplateAreas = '"sidebar app"'
+    document.getElementById("hue").value = cssVar("--hue")
+    document.getElementById("hueAscent").value = cssVar("--hueAscent")
+    document.getElementById("fontSize").value = cssVar("--fontSize")
+    document.getElementById("hueDisp").innerHTML = cssVar("--hue")
+    document.getElementById("hueAscentDisp").innerHTML = cssVar("--hueAscent")
+    document.getElementById("fontSizeDisp").innerHTML = cssVar("--fontSize")
+    document.getElementById("FontSelect").value = cssVar("--font-body").replaceAll('\"', "")
+
     // document.getElementById("customizer").classList.add("hidden");
     window.hideCustomizer = 0
+    runonload()
 }
 
 
